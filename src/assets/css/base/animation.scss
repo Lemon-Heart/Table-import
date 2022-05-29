@@ -1,0 +1,106 @@
+.list-enter-active, .list-leave-active {
+  transition: all .5s;
+}
+.list-enter, .list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.briefLabel-enter {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+.briefLabel-enter-active  {
+    transition: all .4s;
+}
+.briefLabel-enter-to {
+    transform: translate(0);
+    opacity: 1;
+}
+.briefLabel-leave {
+    opacity: 1;
+    transform: translate(0);
+}
+.briefLabel-leave-active {
+    transition: all .4s;
+}
+.briefLabel-leave-to {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+.slideToBot-enter {
+  opacity: 0;
+  transform: translateY(50px);
+}
+.slideToBot-enter-active  {
+  transition: all .2s .2s;
+}
+.slideToBot-enter-to {
+  transform: translate(0);
+  opacity: 1;
+}
+.slideToBot-leave {
+  opacity: 1;
+  transform: translate(0);
+}
+.slideToBot-leave-active {
+  transition: all .2s;
+}
+.slideToBot-leave-to {
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+
+
+.message-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.message-enter-active  {
+  transition: all .4s;
+}
+.message-enter-to {
+  transform: translate(0);
+  opacity: 1;
+}
+.message-leave {
+  opacity: 1;
+  transform: translate(0);
+}
+.message-leave-active {
+  transition: all .4s;
+}
+.message-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+
+.portfolio-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.portfolio-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.portfolio-leave {
+  opacity: 1;
+  transform: translateX(0);
+}
+.portfolio-leave-active {
+  position: absolute;
+}
+.portfolio-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
