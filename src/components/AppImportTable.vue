@@ -6,7 +6,7 @@
         <span>Export File</span>
         <img :src="exportIcon" alt="">
       </button>
-      <button v-if="tableHead" class="table__add" :disabled="searchInput ? true : false" @click="addRow">Add row</button>
+      <button v-if="tableHead && !searchInput" class="table__add" :disabled="searchInput ? true : false" @click="addRow">Add row</button>
       <input v-if="tableHead" v-model.trim="editInput" ref="toEditCell" class="table__edit" type="text" @click.stop @focusout="change" @keydown.enter="change">
       <input v-if="tableHead" v-model.trim="searchInput" placeholder="Search..." class="table__search" type="text">
     </div>
@@ -20,9 +20,9 @@
       </thead>
       <tbody>
         <tr class="table__row" v-for="(tr, j) in found" :key="j" :style="`grid-template-columns: repeat(${tableHead.length}, 1fr)`">
-          <div class="table__rowMethods" @mouseenter="showMethods" @mouseleave="hideMethods">
-            <div v-show="j !== 0 && !searchInput" @click="upRow(j)">↑</div>
-            <div v-show="j !== found.length - 1 && !searchInput" @click="downRow(j)">↓</div>
+          <div v-show="!searchInput" class="table__rowMethods" @mouseenter="showMethods" @mouseleave="hideMethods">
+            <div v-show="j !== 0" @click="upRow(j)">↑</div>
+            <div v-show="j !== found.length - 1" @click="downRow(j)">↓</div>
             <div @click="copyRow(j)">copy</div>
             <div @click="removeRow(j)">✖</div>
           </div>
